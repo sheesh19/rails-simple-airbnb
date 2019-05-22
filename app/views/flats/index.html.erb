@@ -1,0 +1,29 @@
+
+  <div class="row">
+    <% @flats.each do |flat| %>
+
+      <%= link_to flat_path(flat) do %>
+        <div class="col-sm-4">
+          <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="https://source.unsplash.com/random">
+            <div class="card-body">
+              <h5 class="card-title"><%= flat["name"] %></h5>
+              <p class="card-text">
+                <%= flat["address"] %>
+                <br>
+                <%= flat["description"] %>
+              </p>
+              <p class="card-text">
+                <%= flat["price_per_night"] %> |
+                <%= flat["number_of_guests"] %>
+              </p>
+              <%= link_to 'See Flat', flat_path(flat["id"]), class: "btn btn-primary" %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+
+    <% end %>
+  </div>
+
+</div>
